@@ -3,12 +3,5 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+import './SetUp';
 
-import React, { Component } from 'react';
-import {
-    AppRegistry,
-    View
-} from 'react-native';
-import SetUp from './SetUp';
-
-AppRegistry.registerComponent('MyRnLoad', () => SetUp);
