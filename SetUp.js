@@ -9,9 +9,9 @@ import {AppRegistry} from 'react-native';
  * 导入相关的类
  */
 // import RnHello from './app/day01/RnHello';
-import FelxDemo from './app/day01/felxdemo';
+import FlexDemo from './app/day01/flexdemo';
 
 /**
  * 注册
  */
-AppRegistry.registerComponent('MyRnLoad',()=>FelxDemo);
+AppRegistry.registerComponent('MyRnLoad',()=>FlexDemo);

@@ -1,5 +1,5 @@
 /**
- * Created by YSD on 2017/4/11.
+ * Created by cj on 2017/4/11.
  */
 import React,{Component} from 'react';
 import {
@@ -8,7 +8,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-export default class FelxDemo extends Component{
+export default class FlexDemo extends Component{
     render() {
         return (
             <View style={FlexDiceTestStyle.container}>
