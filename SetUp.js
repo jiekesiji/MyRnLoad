@@ -11,11 +11,12 @@ import {AppRegistry} from 'react-native';
 // import RnHello from './app/day01/RnHello';
 // import FlexDemo from './app/day01/flexdemo';
 
-import StatusDemo from './app/day02/StatusDemo';
+// import StatusDemo from './app/day02/StatusDemo';
+import NaviModule from './app/day03/NaviModule';
 
 /**
  * 注册
  */
 // AppRegistry.registerComponent('MyRnLoad',()=>FlexDemo);
 
-AppRegistry.registerComponent('MyRnLoad',()=>StatusDemo);
+AppRegistry.registerComponent('MyRnLoad', () => NaviModule);
