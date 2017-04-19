@@ -12,11 +12,14 @@ import {AppRegistry} from 'react-native';
 // import FlexDemo from './app/day01/flexdemo';
 
 // import StatusDemo from './app/day02/StatusDemo';
-import NaviModule from './app/day03/NaviModule';
+// import NaviModule from './app/day03/NaviModule';
+// import TextInputDemo from './app/day04/TextInputDemo';
+import ImageDemo from './app/day04/ImageDemo';
+
 
 /**
  * 注册
  */
 // AppRegistry.registerComponent('MyRnLoad',()=>FlexDemo);
 
-AppRegistry.registerComponent('MyRnLoad', () => NaviModule);
+AppRegistry.registerComponent('MyRnLoad', () => ImageDemo);
