@@ -14,7 +14,8 @@ import {AppRegistry} from 'react-native';
 // import StatusDemo from './app/day02/StatusDemo';
 // import NaviModule from './app/day03/NaviModule';
 // import TextInputDemo from './app/day04/TextInputDemo';
-import ImageDemo from './app/day04/ImageDemo';
+// import ImageDemo from './app/day04/ImageDemo';
+import ScrollViewDemo from './app/day05/ScrollViewDemo';
 
 
 /**
@@ -22,4 +23,4 @@ import ImageDemo from './app/day04/ImageDemo';
  */
 // AppRegistry.registerComponent('MyRnLoad',()=>FlexDemo);
 
-AppRegistry.registerComponent('MyRnLoad', () => ImageDemo);
+AppRegistry.registerComponent('MyRnLoad', () => ScrollViewDemo);
