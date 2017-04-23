@@ -17,6 +17,8 @@ export default class ListViewDemo extends Component{
       constructor(props) {
         super(props);
         const ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 !== r2});
+
+        // !== 和 != 不是一个概念
         // const ds = new ListView.dataSource({rowHasChanged:(r1, r2) => r1 != r2});
         // 初始状态
         this.state = {
