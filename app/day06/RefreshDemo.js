@@ -11,55 +11,77 @@ import {
     StyleSheet,
     ListView,
     RefreshControl,
-    TouchableHighlight
+    TouchableHighlight,
+    Image
 } from 'react-native';
 
-export default class RefreshDemo extends Component{
+export default class RefreshDemo extends Component {
     // 构造
-      constructor(props) {
+    constructor(props) {
         super(props);
         //初始化一个listview数据源
-          const ds = new ListView.DataSource({rowHasChanged:(r1,r2)=> r1 !== r2});
+        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         // 初始状态
         this.state = {
-            isRefreshing:false,
-            dataSource:ds.cloneWithProps(this._genRows(-1)),
+            isRefreshing: false,
+            dataSource: ds.cloneWithRows(this._genRows(-1)),
         };
-      }
+    }
 
-      _genRows(flag){
-          const dataBolb = [];
-          for(let i =0;i<50;i++){
-              if( i == flag){
-                  dataBolb.push('我被点击了' + i);
-              }else{
-                  dataBolb.push('我没有被点击');
-              }
-          }
-          return dataBolb;
-      }
+    _genRows(flag) {
+        const dataBolb = [];
+        for (let i = 0; i < 50; i++) {
+            if (i == flag) {
+                dataBolb.push('我被点击了' + i);
+            } else {
+                dataBolb.push('我没有被点击' + i);
+            }
+        }
+        return dataBolb;
+    }
 
-      _renderRow(rowData,rowID,selectID){
-          return(
-              <TouchableHighlight
-                  onPress={() => {
-                      this._pressRow(rowData,rowID);
-                  }}
-                  underlayColor='red'>
+    _renderRow(rowData, rowID, selectID) {
+        return (
+            <TouchableHighlight
+                onPress={() => {
+                    this._pressRow(rowData, selectID);
+                }}
+                underlayColor='#fff333'>
 
-                  <View style={styles.item}>
-                     <Image style={{width:40,height: 40}} source={require('./../../image/colck.png')}/>
-                      <Text style={{flex:1,fontSize: 20,marginLeft: 20}}>
-                          {rowData}
-                      </Text>
-                  </View>
-              </TouchableHighlight>
-          );
-      }
+                <View style={styles.item}>
+                    <Image style={{width: 40, height: 40}} source={require('./../../image/colck.png')}/>
+                    <Text style={{flex: 1, fontSize: 20, marginLeft: 20}}>
+                        {rowData}
+                    </Text>
+                </View>
+            </TouchableHighlight>
+        );
+    }
 
-    _onRefresh(){
-        this.setState({isRefreshing:true});
-        setTimeout
+    _refreshRows() {
+        const dataBolb = [];
+        for (let i = 0; i < 50; i++) {
+            dataBolb.push('我没有被点击');
+        }
+        return dataBolb;
+    }
+
+    _pressRow(rowData,rowID){
+        alert(rowData);
+        this.setState({dataSource:this.state.dataSource.cloneWithRows(
+            this._genRows(rowID)
+        )});
+    }
+
+    _onRefresh() {
+        this.setState({isRefreshing: true});
+        setTimeout(() => {
+            this.setState({
+                isRefreshing: false,
+                dataSource: this.state.dataSource.cloneWithRows(
+                    this._refreshRows())
+            });
+        }, 5000);
     }
 
     render() {
@@ -67,14 +89,14 @@ export default class RefreshDemo extends Component{
             <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this._renderRow.bind(this)}
-                refreshControl = {
+                refreshControl={
                     <RefreshControl
-                         refreshing={this.state.isRefreshing}
-                         onRefresh={this._onRefresh.bind(this)}
-                         tintColor= "#ff0000"
-                         colors={['#ff0000','#00ff00','#0000ff']}
-                         progressBackgroundColor='#ffff00'
-                         enabled={true}
+                        refreshing={this.state.isRefreshing}
+                        onRefresh={this._onRefresh.bind(this)}
+                        tintColor="#ff0000"
+                        colors={['#ff0000', '#00ff00', '#0000ff']}
+                        progressBackgroundColor='#ffff00'
+                        enabled={true}
                     />
                 }
             />
@@ -83,17 +105,17 @@ export default class RefreshDemo extends Component{
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor:'white',
-        justifyContent:'center',
-        alignItems:'center',
+    container: {
+        flex: 1,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    item:{
-        flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center',
-        padding:10
+    item: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10
     },
 
 });
