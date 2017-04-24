@@ -17,11 +17,11 @@ import {AppRegistry} from 'react-native';
 // import ImageDemo from './app/day04/ImageDemo';
 // import ListViewDemo from './app/day05/ListViewDemo';
 // import RefreshDemo from './app/day06/RefreshDemo';
-import ToolBarDemo from './app/day07/ToolBarDemo';
+// import ToolBarDemo from './app/day07/ToolBarDemo';
+// import SwitchDemo from './app/day07/SwitchDemo';
+import ViewPagerDemo from './app/day07/ViewPagerDemo';
 
 /**
  * 注册
  */
-// AppRegistry.registerComponent('MyRnLoad',()=>FlexDemo);
-
-AppRegistry.registerComponent('MyRnLoad', () => ToolBarDemo);
+AppRegistry.registerComponent('MyRnLoad', () => ViewPagerDemo);
