@@ -16,12 +16,12 @@ import {AppRegistry} from 'react-native';
 // import TextInputDemo from './app/day04/TextInputDemo';
 // import ImageDemo from './app/day04/ImageDemo';
 // import ListViewDemo from './app/day05/ListViewDemo';
-import RefreshDemo from './app/day06/RefreshDemo';
-
+// import RefreshDemo from './app/day06/RefreshDemo';
+import ToolBarDemo from './app/day07/ToolBarDemo';
 
 /**
  * 注册
  */
 // AppRegistry.registerComponent('MyRnLoad',()=>FlexDemo);
 
-AppRegistry.registerComponent('MyRnLoad', () => RefreshDemo);
+AppRegistry.registerComponent('MyRnLoad', () => ToolBarDemo);
