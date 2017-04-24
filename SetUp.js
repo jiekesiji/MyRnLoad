@@ -19,9 +19,9 @@ import {AppRegistry} from 'react-native';
 // import RefreshDemo from './app/day06/RefreshDemo';
 // import ToolBarDemo from './app/day07/ToolBarDemo';
 // import SwitchDemo from './app/day07/SwitchDemo';
-import ViewPagerDemo from './app/day07/ViewPagerDemo';
-
+// import ViewPagerDemo from './app/day07/ViewPagerDemo';
+import PickerDemo from './app/day07/PickerDemo';
 /**
  * 注册
  */
-AppRegistry.registerComponent('MyRnLoad', () => ViewPagerDemo);
+AppRegistry.registerComponent('MyRnLoad', () => PickerDemo);
